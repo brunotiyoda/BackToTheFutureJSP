@@ -1,0 +1,73 @@
+@startuml
+
+class com.back.to.the.future.beans.Character {
+    - id : Long
+    - name : String
+    - description : String
+    - curiosities : String
+    - photos : List<com.back.to.the.future.beans.Photo>
+    + getId()
+    + setId(Long id)
+    + getName()
+    + setName(String name)
+    + getDescription()
+    + setDescription(String description)
+    + getCuriosities()
+    + setCuriosities(String curiosities)
+    + List<com.back.to.the.future.beans.Photo> getPhotos()
+    + setPhotos(List<com.back.to.the.future.beans.Photo> photos)
+}
+
+class com.back.to.the.future.beans.Scenes {
+    - id : Long
+    - title : String
+    - link : String
+    - description : String
+    - characters : List<com.back.to.the.future.beans.Character>
+    + getId()
+    + setId(Long id)
+    + getTitle()
+    + setTitle(String title) 
+    + getLink()
+    + setLink(String link)
+    + getDescription()
+}
+
+class com.back.to.the.future.beans.Photo {
+    - id : Long
+    - path : String
+    - year : String
+    - descriptionOld : String
+    - descriptionActual : String
+    + getId()
+    + setId(Long id)
+    + getYear()
+    + setYear(String year)
+    + getDescriptionOld()
+    + setDescriptionOld(String descriptionOld)
+    + getDescriptionActual()
+    + setDescriptionActual(String descriptionActual) 
+}
+
+class com.back.to.the.future.beans.Relation {
+    - id : Long
+    - scenes : List<com.back.to.the.future.beans.Scenes>
+    - characters : List<com.back.to.the.future.beans.Character>
+    - description : String
+    + getId()
+    + setId(Long id)
+    + getScenes()
+    + setScenes(List<com.back.to.the.future.beans.Scenes> scenes)
+    + getCharacters()
+    + setCharacters(List<com.back.to.the.future.beans.Character> characters)
+    + getDescription()
+    + setDescription(String description)
+}
+
+Character "2" -- "1" Relation
+Character "1" -- "*" Photo
+Scenes "*" -- "1" Relation
+Scenes "1" -- "1" Character
+Relation "1" -- "*" Character
+
+@enduml
