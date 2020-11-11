@@ -24,6 +24,7 @@ class Events {
     - link : String
     - description : String
     - characters : List<Character>
+    - dateOfEvents : LocalDateTime
     + getId()
     + setId(Long id)
     + getTitle()
@@ -31,6 +32,8 @@ class Events {
     + getLink()
     + setLink(String link)
     + getDescription()
+    + getDateOfEvents()
+    + setDateOfEvents(LocalDateTime dateOfEvents)
 }
 
 class Photo {

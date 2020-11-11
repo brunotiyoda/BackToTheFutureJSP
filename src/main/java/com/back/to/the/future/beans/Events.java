@@ -1,5 +1,6 @@
 package com.back.to.the.future.beans;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 public class Events {
@@ -9,6 +10,7 @@ public class Events {
     private String link;
     private String description;
     private List<Character> characters;
+    private LocalDateTime dateOfEvents;
 
     public Long getId() {
         return id;
@@ -48,5 +50,13 @@ public class Events {
 
     public void setCharacters(List<Character> characters) {
         this.characters = characters;
+    }
+
+    public LocalDateTime getDateOfEvents() {
+        return dateOfEvents;
+    }
+
+    public void setDateOfEvents(LocalDateTime dateOfEvents) {
+        this.dateOfEvents = dateOfEvents;
     }
 }
