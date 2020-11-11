@@ -5,7 +5,7 @@ import java.util.List;
 public class Relation {
 
     private Long id;
-    private List<Scenes> scenes;
+    private List<Events> scenes;
     private List<Character> characters; // max 2
     private String description;
 
@@ -17,11 +17,11 @@ public class Relation {
         this.id = id;
     }
 
-    public List<Scenes> getScenes() {
+    public List<Events> getScenes() {
         return scenes;
     }
 
-    public void setScenes(List<Scenes> scenes) {
+    public void setScenes(List<Events> scenes) {
         this.scenes = scenes;
     }
 

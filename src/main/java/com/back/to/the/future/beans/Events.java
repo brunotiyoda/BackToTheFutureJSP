@@ -2,13 +2,13 @@ package com.back.to.the.future.beans;
 
 import java.util.List;
 
-public class Scenes {
+public class Events {
 
     private Long id;
     private String title;
     private String link;
     private String description;
-    private List<com.back.to.the.future.beans.Character> characters;
+    private List<Character> characters;
 
     public Long getId() {
         return id;
@@ -42,11 +42,11 @@ public class Scenes {
         this.description = description;
     }
 
-    public List<com.back.to.the.future.beans.Character> getCharacters() {
+    public List<Character> getCharacters() {
         return characters;
     }
 
-    public void setCharacters(List<com.back.to.the.future.beans.Character> characters) {
+    public void setCharacters(List<Character> characters) {
         this.characters = characters;
     }
 }

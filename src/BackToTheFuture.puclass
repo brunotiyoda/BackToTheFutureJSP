@@ -1,11 +1,11 @@
 @startuml
 
-class com.back.to.the.future.beans.Character {
+class Character {
     - id : Long
     - name : String
     - description : String
     - curiosities : String
-    - photos : List<com.back.to.the.future.beans.Photo>
+    - photos : List<Photo>
     + getId()
     + setId(Long id)
     + getName()
@@ -14,16 +14,16 @@ class com.back.to.the.future.beans.Character {
     + setDescription(String description)
     + getCuriosities()
     + setCuriosities(String curiosities)
-    + List<com.back.to.the.future.beans.Photo> getPhotos()
-    + setPhotos(List<com.back.to.the.future.beans.Photo> photos)
+    + List<Photo> getPhotos()
+    + setPhotos(List<Photo> photos)
 }
 
-class com.back.to.the.future.beans.Scenes {
+class Events {
     - id : Long
     - title : String
     - link : String
     - description : String
-    - characters : List<com.back.to.the.future.beans.Character>
+    - characters : List<Character>
     + getId()
     + setId(Long id)
     + getTitle()
@@ -33,7 +33,7 @@ class com.back.to.the.future.beans.Scenes {
     + getDescription()
 }
 
-class com.back.to.the.future.beans.Photo {
+class Photo {
     - id : Long
     - path : String
     - year : String
@@ -49,25 +49,36 @@ class com.back.to.the.future.beans.Photo {
     + setDescriptionActual(String descriptionActual) 
 }
 
-class com.back.to.the.future.beans.Relation {
+class Relation {
     - id : Long
-    - scenes : List<com.back.to.the.future.beans.Scenes>
-    - characters : List<com.back.to.the.future.beans.Character>
+    - scenes : List<Scenes>
+    - characters : List<Character>
     - description : String
     + getId()
     + setId(Long id)
     + getScenes()
-    + setScenes(List<com.back.to.the.future.beans.Scenes> scenes)
+    + setScenes(List<Scenes> scenes)
     + getCharacters()
-    + setCharacters(List<com.back.to.the.future.beans.Character> characters)
+    + setCharacters(List<Character> characters)
     + getDescription()
     + setDescription(String description)
 }
 
-Character "2" -- "1" Relation
+class CharacterRelation {
+    - id : Long
+    - character : Character
+    - relation : Relation
+    + getId()
+    + setId(Long id)
+    + getCharacter()
+    + setCharacter(Character character)
+    + getRelation()
+    + setRelation(Relation relation)
+}
+
+
+Character "2" -- "*" Relation
 Character "1" -- "*" Photo
-Scenes "*" -- "1" Relation
-Scenes "1" -- "1" Character
-Relation "1" -- "*" Character
+Events "*" -- "1" Relation
 
 @enduml

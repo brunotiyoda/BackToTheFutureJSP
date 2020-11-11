@@ -8,7 +8,7 @@ public class Character {
     private String name;
     private String description;
     private String curiosities;
-    private List<com.back.to.the.future.beans.Photo> photos;
+    private List<Photo> photos;
 
     public Long getId() {
         return id;
@@ -42,11 +42,11 @@ public class Character {
         this.curiosities = curiosities;
     }
 
-    public List<com.back.to.the.future.beans.Photo> getPhotos() {
+    public List<Photo> getPhotos() {
         return photos;
     }
 
-    public void setPhotos(List<com.back.to.the.future.beans.Photo> photos) {
+    public void setPhotos(List<Photo> photos) {
         this.photos = photos;
     }
 }

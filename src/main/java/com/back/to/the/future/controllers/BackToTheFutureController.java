@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 @WebServlet(urlPatterns = "/characters")
-public class CharacterController extends HttpServlet {
+public class BackToTheFutureController extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -19,6 +19,6 @@ public class CharacterController extends HttpServlet {
         Character character = new Character();
         character.setName(biscoito);
 
-        System.out.println("OK" + character.getName());
+        System.out.println("OK " + character.getName());
     }
 }
