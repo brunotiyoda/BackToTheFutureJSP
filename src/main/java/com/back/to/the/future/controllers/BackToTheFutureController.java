@@ -2,6 +2,7 @@ package com.back.to.the.future.controllers;
 
 import com.back.to.the.future.beans.Character;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -18,6 +19,10 @@ public class BackToTheFutureController extends HttpServlet {
         String biscoito = req.getParameter("biscoito");
         Character character = new Character();
         character.setName(biscoito);
+
+        RequestDispatcher requestDispatcher = req.getRequestDispatcher("character.jsp");
+        req.setAttribute("test", character.getName());
+        requestDispatcher.forward(req, resp);
 
         System.out.println("OK " + character.getName());
     }

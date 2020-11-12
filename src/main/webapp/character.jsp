@@ -11,8 +11,11 @@
     <title>Title</title>
 </head>
 <body>
+
 <form action="/BackToTheFutureJSP_war/characters" method="post">
+    ${ test }
     biscoito page <input type="text" name="biscoito">
+
 
     <button type="submit">Send</button>
 </form>
