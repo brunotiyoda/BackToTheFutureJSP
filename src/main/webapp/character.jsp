@@ -17,19 +17,30 @@
           integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
 </head>
 <body>
-
-List of Characters: <br/>
-<ul>
-    <c:forEach var="character" items="${characters}">
-        <li>${character.name}</li>
-    </c:forEach>
-</ul>
-
-<c:if test="${not empty test}">
-    abacaxi
-</c:if>
-
-${ test }
-
+<div class="container">
+    Characters: <br/>
+    <table class="table">
+        <thead>
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Name</th>
+            <th scope="col">Description</th>
+            <th scope="col">Curiosities</th>
+            <th scope="col">Photo</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <c:forEach var="character" items="${characters}">
+                <th scope="row">${character.id} </th>
+                <td>${character.name}</td>
+                <td><p>${character.description}</p></td>
+                <td>@mdo</td>
+                <td><img class="img-fluid" src="${character.photoBase64}" alt="${character.name}"></td>
+            </c:forEach>
+        </tr>
+        </tbody>
+    </table>
+</div>
 </body>
 </html>

@@ -1,25 +1,11 @@
-package com.back.to.the.future.beans;
+package com.back.to.the.future.controllers.dtos;
 
-import java.util.List;
-
-public class Character {
-
+public class CharacterResponseDTO {
     private Long id;
     private String name;
     private String description;
     private String curiosities;
-    private List<Photo> photos;
-
-    public Character() {
-    }
-
-    public Character(Long id, String name, String description, String curiosities, List<Photo> photos) {
-        this.id = id;
-        this.name = name;
-        this.description = description;
-        this.curiosities = curiosities;
-        this.photos = photos;
-    }
+    private String photoBase64;
 
     public Long getId() {
         return id;
@@ -53,11 +39,11 @@ public class Character {
         this.curiosities = curiosities;
     }
 
-    public List<Photo> getPhotos() {
-        return photos;
+    public String getPhotoBase64() {
+        return photoBase64;
     }
 
-    public void setPhotos(List<Photo> photos) {
-        this.photos = photos;
+    public void setPhotoBase64(String photoBase64) {
+        this.photoBase64 = photoBase64;
     }
 }

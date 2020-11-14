@@ -7,6 +7,14 @@ public class Photo {
     private String year;
     private String descriptionOld;
     private String descriptionActual;
+    private String imgBase64;
+
+    public Photo() {
+    }
+
+    public Photo(String imgbase64) {
+        this.path = imgbase64;
+    }
 
     public Long getId() {
         return id;
@@ -46,5 +54,13 @@ public class Photo {
 
     public void setDescriptionActual(String descriptionActual) {
         this.descriptionActual = descriptionActual;
+    }
+
+    public String getImgBase64() {
+        return imgBase64;
+    }
+
+    public void setImgBase64(String imgBase64) {
+        this.imgBase64 = imgBase64;
     }
 }

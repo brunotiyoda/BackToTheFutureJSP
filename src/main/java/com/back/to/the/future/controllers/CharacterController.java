@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.sql.SQLException;
 
 // pesquisar o personagem
 // pesquisar as cenas
@@ -18,11 +19,17 @@ import java.io.IOException;
 @WebServlet(urlPatterns = "/characters")
 public class CharacterController extends HttpServlet {
 
-    private CharacterService characterService = new CharacterService();
+    private final CharacterService characterService = new CharacterService();
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        req.setAttribute("characters", characterService.listOfCharacters());
+        try {
+            req.setAttribute("characters", characterService.listOfCharacters());
+            RequestDispatcher requestDispatcher = req.getRequestDispatcher("character.jsp");
+            requestDispatcher.forward(req, resp);
+        } catch (SQLException | ClassNotFoundException throwables) {
+            throwables.printStackTrace();
+        }
     }
 
     @Override
