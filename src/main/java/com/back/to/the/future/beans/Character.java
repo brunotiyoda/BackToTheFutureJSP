@@ -1,24 +1,22 @@
 package com.back.to.the.future.beans;
 
-import java.util.List;
-
 public class Character {
 
     private Long id;
     private String name;
     private String description;
     private String curiosities;
-    private List<Photo> photos;
+    private Photo photo;
 
     public Character() {
     }
 
-    public Character(Long id, String name, String description, String curiosities, List<Photo> photos) {
+    public Character(Long id, String name, String description, String curiosities, Photo photo) {
         this.id = id;
         this.name = name;
         this.description = description;
         this.curiosities = curiosities;
-        this.photos = photos;
+        this.photo = photo;
     }
 
     public Long getId() {
@@ -53,11 +51,11 @@ public class Character {
         this.curiosities = curiosities;
     }
 
-    public List<Photo> getPhotos() {
-        return photos;
+    public Photo getPhoto() {
+        return photo;
     }
 
-    public void setPhotos(List<Photo> photos) {
-        this.photos = photos;
+    public void setPhoto(Photo photo) {
+        this.photo = photo;
     }
 }

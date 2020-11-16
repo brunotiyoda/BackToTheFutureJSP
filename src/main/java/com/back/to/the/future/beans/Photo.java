@@ -7,7 +7,6 @@ public class Photo {
     private String year;
     private String descriptionOld;
     private String descriptionActual;
-    private String imgBase64;
 
     public Photo() {
     }
@@ -56,11 +55,4 @@ public class Photo {
         this.descriptionActual = descriptionActual;
     }
 
-    public String getImgBase64() {
-        return imgBase64;
-    }
-
-    public void setImgBase64(String imgBase64) {
-        this.imgBase64 = imgBase64;
-    }
 }

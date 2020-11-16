@@ -17,30 +17,25 @@
           integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
 </head>
 <body>
-<div class="container">
+<div class="container-fluid">
     Characters: <br/>
-    <table class="table">
-        <thead>
-        <tr>
-            <th scope="col">ID</th>
-            <th scope="col">Name</th>
-            <th scope="col">Description</th>
-            <th scope="col">Curiosities</th>
-            <th scope="col">Photo</th>
-        </tr>
-        </thead>
+
+    <table style="height: 100px;">
         <tbody>
         <tr>
             <c:forEach var="character" items="${characters}">
-                <th scope="row">${character.id} </th>
-                <td>${character.name}</td>
-                <td><p>${character.description}</p></td>
-                <td>@mdo</td>
-                <td><img class="img-fluid" src="${character.photoBase64}" alt="${character.name}"></td>
+                <td class="align-baseline"><img style="width: 268.83px; height: auto; position: absolute"
+                                                class="rounded"
+                                                src="${character.photoBase64}" alt="${character.name}"></td>
+                <td class="align-text-top">${character.name}</td>
+                <td class="align-middle">
+                    <p class="text-justify">${character.description}</p>
+                </td>
             </c:forEach>
         </tr>
         </tbody>
     </table>
+
 </div>
 </body>
 </html>
