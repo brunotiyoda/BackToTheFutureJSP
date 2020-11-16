@@ -39,7 +39,7 @@ public class CharacterController extends HttpServlet {
         Character character = new Character();
         character.setName(biscoito);
 
-        // redirecionamento
+        // redirecionamento resp.sendRedirect("endpoint");
         RequestDispatcher requestDispatcher = req.getRequestDispatcher("character.jsp");
         req.setAttribute("test", character.getName());
         requestDispatcher.forward(req, resp);
