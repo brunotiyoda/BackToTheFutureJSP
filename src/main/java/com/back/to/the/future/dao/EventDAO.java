@@ -28,6 +28,31 @@ public class EventDAO {
             event.setLink(rs.getString("LINK"));
             eventsTimeLineOne.add(event);
         }
+        connection.close();
         return eventsTimeLineOne;
     }
+
+    public List<Events> allEventsTimelineTwo() throws SQLException, ClassNotFoundException {
+        Connection connection = new ConnectionFactory().getConnection();
+        List<Events> eventsTimeLineOne = new ArrayList<>();
+        Statement statement = connection.createStatement();
+        String sql = "SELECT * FROM " +
+                "TB_EVENTS " +
+                "WHERE TIMELINE = 2 ORDER BY EVENTS_ID";
+        statement.executeQuery(sql);
+        ResultSet rs = statement.getResultSet();
+        while (rs.next()) {
+            Events event = new Events();
+            event.setId(rs.getLong("EVENTS_ID"));
+            event.setTitle(rs.getString("TITLE"));
+            event.setDescription(rs.getString("DESCRIPTION"));
+            event.setLink(rs.getString("LINK"));
+            eventsTimeLineOne.add(event);
+        }
+        connection.close();
+        return eventsTimeLineOne;
+    }
+
+
+
 }

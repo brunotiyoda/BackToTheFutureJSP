@@ -1,6 +1,7 @@
 <%@ page import="com.back.to.the.future.dao.EventDAO" %>
 <%@ page import="com.back.to.the.future.beans.Events" %>
 <%@ page import="java.util.List" %>
+<%@ page import="com.back.to.the.future.dao.CharacterEventDAO" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <c:url value="/characters" var="servletCharacters"/>
 <c:url value="/events" var="servletEvents"/>
@@ -42,7 +43,7 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
-                <a class="nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
+                <a class="nav-link active" href="${servletCharacters}">Personagens <span class="sr-only">(current)</span></a>
                 <a class="nav-link" href="#">Features</a>
                 <a class="nav-link" href="#">Pricing</a>
                 <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
@@ -62,15 +63,30 @@
                 <p>
                     <a class="btn btn-dark btn-block"
                        data-toggle="collapse"
-                       href="#collapseExample<%=i%>"
+                       href="#collapseExample<%=eventsTimeLineOne.get(i).getId()%>"
                        role="button"
                        aria-expanded="false"
-                       aria-controls="collapseExample<%=i%>">
+                       aria-controls="collapseExample<%=eventsTimeLineOne.get(i).getId()%>">
                         <%out.print(eventsTimeLineOne.get(i).getTitle());%>
                     </a>
                 </p>
-                <div class="collapse" id="collapseExample<%=i%>">
+                <div class="collapse" id="collapseExample<%=eventsTimeLineOne.get(i).getId()%>">
                     <div class="card card-body">
+                        <div class="p-2 font-weight-bold">
+                            <p>Personagens</p>
+                            <%
+                                List<String> characters =
+                                        new CharacterEventDAO()
+                                                .characterIntoEvents(String.valueOf(eventsTimeLineOne.get(i).getId()));
+
+                                for (int j = 0; j < characters.size(); j++) {
+                            %>
+                            <%
+                                out.print(characters.get(j));%> <br>
+                            <%
+                                }
+                            %>
+                        </div>
                         <%out.print(eventsTimeLineOne.get(i).getDescription());%>
                     </div>
                 </div>
@@ -80,21 +96,36 @@
             <div class="col">
                 <h3 class="display-3">Linha do Tempo 2</h3>
                 <%
-                    List<Events> eventsTimeLineTwo = new EventDAO().allEventsTimelineOne();
+                    List<Events> eventsTimeLineTwo = new EventDAO().allEventsTimelineTwo();
                     for (int i = 0; i < eventsTimeLineTwo.size(); i++) {
                 %>
                 <p>
                     <a class="btn btn-dark btn-block"
                        data-toggle="collapse"
-                       href="#collapseExample<%=i%>"
+                       href="#collapseExample<%=eventsTimeLineTwo.get(i).getId()%>"
                        role="button"
                        aria-expanded="false"
-                       aria-controls="collapseExample<%=i%>">
+                       aria-controls="collapseExample<%=eventsTimeLineTwo.get(i).getId()%>">
                         <%out.print(eventsTimeLineTwo.get(i).getTitle());%>
                     </a>
                 </p>
-                <div class="collapse" id="collapseExample<%=i%>">
+                <div class="collapse" id="collapseExample<%=eventsTimeLineTwo.get(i).getId()%>">
                     <div class="card card-body">
+                        <div class="p-2 font-weight-bold">
+                            <p>Personagens</p>
+                            <%
+                                List<String> characters =
+                                        new CharacterEventDAO()
+                                                .characterIntoEvents(String.valueOf(eventsTimeLineTwo.get(i).getId()));
+
+                                for (int j = 0; j < characters.size(); j++) {
+                            %>
+                            <%
+                                out.print(characters.get(j));%> <br>
+                            <%
+                                }
+                            %>
+                        </div>
                         <%out.print(eventsTimeLineTwo.get(i).getDescription());%>
                     </div>
                 </div>
