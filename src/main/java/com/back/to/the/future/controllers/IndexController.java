@@ -11,17 +11,17 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.sql.SQLException;
 
-@WebServlet(urlPatterns = "/events")
-public class ListAllEventsController extends HttpServlet {
+@WebServlet(urlPatterns = "/index")
+public class IndexController extends HttpServlet {
 
     private final EventsService eventsService = new EventsService();
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
         try {
-            req.setAttribute("allEvents", eventsService.listAllEvents());
-            RequestDispatcher requestDispatcher = req.getRequestDispatcher("events.jsp");
+            req.setAttribute("timelineOne", eventsService.allEventsTimelineOne());
+            req.setAttribute("timelineTwo", eventsService.allEventsTimelineTwo());
+            RequestDispatcher requestDispatcher = req.getRequestDispatcher("index.jsp");
             requestDispatcher.forward(req, resp);
         } catch (SQLException | ClassNotFoundException throwables) {
             throwables.printStackTrace();

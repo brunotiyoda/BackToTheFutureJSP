@@ -1,0 +1,17 @@
+.characters {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    margin: 10px;
+    background: #c6c6c6;
+}
+
+.descriptions {
+    margin-top: 45px;
+}
+
+.images {
+    width: 268.83px;
+    height: auto;
+    position: static;
+}
