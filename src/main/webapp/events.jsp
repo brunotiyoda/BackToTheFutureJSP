@@ -16,7 +16,7 @@
 </head>
 <body>
 <div class="container-fluid">
-    Characters: <br/>
+    Events: <br/>
 
     <table style="height: auto;">
         <tbody>

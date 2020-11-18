@@ -11,12 +11,27 @@ public class Character {
     public Character() {
     }
 
-    public Character(Long id, String name, String description, String curiosities, Photo photo) {
+    public Character(Long id,
+                     String name,
+                     String description,
+                     String curiosities,
+                     Photo photo) {
         this.id = id;
         this.name = name;
         this.description = description;
         this.curiosities = curiosities;
         this.photo = photo;
+    }
+
+    public Character(Long id, String name, String description, String curiosities) {
+        this.id = id;
+        this.name = name;
+        this.description = description;
+        this.curiosities = curiosities;
+    }
+
+    public Character(String id) {
+        this.id = Long.valueOf(id);
     }
 
     public Long getId() {

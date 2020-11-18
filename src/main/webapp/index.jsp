@@ -1,5 +1,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <c:url value="/characters" var="servletCharacters"/>
+<c:url value="/events" var="servletEvents"/>
 <%--
   Created by IntelliJ IDEA.
   User: bruno
@@ -16,15 +17,29 @@
           integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
 </head>
 <body>
+<form action="${servletEvents}" method="get">
 
-
-<form action="${servletCharacters}" method="get">
-
-    biscoito page <input class="form-control" type="text" name="biscoito">
+    events page <input class="form-control" type="text" name="biscoito">
 
     <button type="submit" class="btn btn-primary">Send</button>
 
     <img src="">
+
+    <c:if test="${not empty test}">
+        abacaxi
+    </c:if>
+</form>
+
+<img src="img/BackToTheFuture.jpg" alt="">
+
+
+<form action="${servletCharacters}" method="get">
+
+    character page <input class="form-control" type="text" name="biscoito">
+
+    <button type="submit" class="btn btn-primary">Send</button>
+
+
 
     <c:if test="${not empty test}">
         abacaxi
