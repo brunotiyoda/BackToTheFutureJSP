@@ -36,9 +36,8 @@
     </div>
 </nav>
 
-<%  List<Events> eventsTimeLineOne = new EventDAO().AllEventsTimelineOne();
-    int i;
-    for (i = 0; i < eventsTimeLineOne.size(); i ++) {%>
+    <%List<Events> eventsTimeLineOne = new EventDAO().AllEventsTimelineOne();
+    for (int i = 0; i < eventsTimeLineOne.size(); i ++) {%>
         <p>
             <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
                 <%eventsTimeLineOne.get(i).getTitle();%>
