@@ -11,7 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class EventDAO {
-    public List<Events> AllEventsTimelineOne() throws SQLException, ClassNotFoundException {
+    public List<Events> allEventsTimelineOne() throws SQLException, ClassNotFoundException {
         Connection connection = new ConnectionFactory().getConnection();
         List<Events> eventsTimeLineOne = new ArrayList<>();
         Statement statement = connection.createStatement();

@@ -49,23 +49,59 @@
             </div>
         </div>
     </nav>
-        <%List<Events> eventsTimeLineOne = new EventDAO().AllEventsTimelineOne();
-    for (int i = 0; i < eventsTimeLineOne.size(); i ++) {%> <p>
-    <a class="btn btn-dark btn-block"
-       data-toggle="collapse"
-       href="#collapseExample<%=i%>"
-       role="button"
-       aria-expanded="false"
-       aria-controls="collapseExample<%=i%>">
-        <%out.print(eventsTimeLineOne.get(i).getTitle());%>
-    </a>
-</p>
-    <div class="collapse" id="collapseExample<%=i%>">
-        <div class="card card-body">
-            <%out.print(eventsTimeLineOne.get(i).getDescription());%>
+
+    <div class="container">
+
+        <div class="row">
+            <div class="col">
+                <h3 class="display-3">Linha do Tempo 1</h3>
+                <%
+                    List<Events> eventsTimeLineOne = new EventDAO().allEventsTimelineOne();
+                    for (int i = 0; i < eventsTimeLineOne.size(); i++) {
+                %>
+                <p>
+                    <a class="btn btn-dark btn-block"
+                       data-toggle="collapse"
+                       href="#collapseExample<%=i%>"
+                       role="button"
+                       aria-expanded="false"
+                       aria-controls="collapseExample<%=i%>">
+                        <%out.print(eventsTimeLineOne.get(i).getTitle());%>
+                    </a>
+                </p>
+                <div class="collapse" id="collapseExample<%=i%>">
+                    <div class="card card-body">
+                        <%out.print(eventsTimeLineOne.get(i).getDescription());%>
+                    </div>
+                </div>
+                <%}%>
+            </div>
+
+            <div class="col">
+                <h3 class="display-3">Linha do Tempo 2</h3>
+                <%
+                    List<Events> eventsTimeLineTwo = new EventDAO().allEventsTimelineOne();
+                    for (int i = 0; i < eventsTimeLineTwo.size(); i++) {
+                %>
+                <p>
+                    <a class="btn btn-dark btn-block"
+                       data-toggle="collapse"
+                       href="#collapseExample<%=i%>"
+                       role="button"
+                       aria-expanded="false"
+                       aria-controls="collapseExample<%=i%>">
+                        <%out.print(eventsTimeLineTwo.get(i).getTitle());%>
+                    </a>
+                </p>
+                <div class="collapse" id="collapseExample<%=i%>">
+                    <div class="card card-body">
+                        <%out.print(eventsTimeLineTwo.get(i).getDescription());%>
+                    </div>
+                </div>
+                <%}%>
+            </div>
         </div>
     </div>
-        <%}%>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
             integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
