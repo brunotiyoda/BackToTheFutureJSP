@@ -34,6 +34,11 @@ public class Character {
         this.id = Long.valueOf(id);
     }
 
+    public Character(String name, Photo imgbase64) {
+        this.name = name;
+        this.photo = imgbase64;
+    }
+
     public Long getId() {
         return id;
     }

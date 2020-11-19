@@ -11,6 +11,57 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class EventDAO {
+
+    public List<Events> eventsOnRelationOne(Long relation) throws SQLException, ClassNotFoundException {
+        Connection connection = new ConnectionFactory().getConnection();
+        List<Events> eventsTimeLineOne = new ArrayList<>();
+        Statement statement = connection.createStatement();
+        String sql = "SELECT *\n" +
+                "FROM TB_EVENTS\n" +
+                "WHERE EVENTS_ID IN (\n" +
+                "    SELECT EVENTS_ID\n" +
+                "    FROM TB_EVENTS_ON_RELATION\n" +
+                "    WHERE RELATION_ID IN (" + relation + ")\n" +
+                ")\n" +
+                "  AND TIMELINE = 1\n" +
+                "ORDER BY EVENTS_ID\n";
+        statement.executeQuery(sql);
+        ResultSet rs = statement.getResultSet();
+        while (rs.next()) {
+            Events event = new Events();
+            event.setTitle(rs.getString("TITLE"));
+            event.setDescription(rs.getString("DESCRIPTION"));
+            eventsTimeLineOne.add(event);
+        }
+        connection.close();
+        return eventsTimeLineOne;
+    }
+
+    public List<Events> eventsOnRelationTwo(Long relation) throws SQLException, ClassNotFoundException {
+        Connection connection = new ConnectionFactory().getConnection();
+        List<Events> eventsTimeLineTwo = new ArrayList<>();
+        Statement statement = connection.createStatement();
+        String sql = "SELECT *\n" +
+                "FROM TB_EVENTS\n" +
+                "WHERE EVENTS_ID IN (\n" +
+                "    SELECT EVENTS_ID\n" +
+                "    FROM TB_EVENTS_ON_RELATION\n" +
+                "    WHERE RELATION_ID IN (" + relation + ")\n" +
+                ")\n" +
+                "  AND TIMELINE = 2\n" +
+                "ORDER BY EVENTS_ID\n";
+        statement.executeQuery(sql);
+        ResultSet rs = statement.getResultSet();
+        while (rs.next()) {
+            Events event = new Events();
+            event.setTitle(rs.getString("TITLE"));
+            event.setDescription(rs.getString("DESCRIPTION"));
+            eventsTimeLineTwo.add(event);
+        }
+        connection.close();
+        return eventsTimeLineTwo;
+    }
+
     public List<Events> allEventsTimelineOne() throws SQLException, ClassNotFoundException {
         Connection connection = new ConnectionFactory().getConnection();
         List<Events> eventsTimeLineOne = new ArrayList<>();
@@ -52,7 +103,4 @@ public class EventDAO {
         connection.close();
         return eventsTimeLineOne;
     }
-
-
-
 }

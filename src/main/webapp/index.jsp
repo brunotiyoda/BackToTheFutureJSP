@@ -5,6 +5,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <c:url value="/characters" var="servletCharacters"/>
 <c:url value="/events" var="servletEvents"/>
+<c:url value="/relation" var="servletRelation"/>
 <%--
   Created by IntelliJ IDEA.
   User: bruno
@@ -42,9 +43,9 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav">
-            <a class="nav-link active" href="${servletCharacters}">Personagens <span
-                    class="sr-only">(current)</span></a>
-            <a class="nav-link" href="#">Relações</a>
+            <a class="nav-link active" href="${servletIndex}">Home</a>
+            <a class="nav-link" href="${servletCharacters}">Personagens</a>
+            <a class="nav-link" href=${servletRelation}>Relações</a>
         </div>
     </div>
 </nav>

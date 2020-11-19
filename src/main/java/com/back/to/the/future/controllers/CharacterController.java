@@ -12,10 +12,6 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.sql.SQLException;
 
-// pesquisar o personagem
-// pesquisar as cenas
-//
-
 @WebServlet(urlPatterns = "/characters")
 public class CharacterController extends HttpServlet {
 

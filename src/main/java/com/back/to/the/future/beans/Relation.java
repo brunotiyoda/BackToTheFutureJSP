@@ -5,8 +5,10 @@ import java.util.List;
 public class Relation {
 
     private Long id;
-    private List<Events> events;
-    private List<Character> characters; // max 2
+    private List<Events> eventsTimelineOne;
+    private List<Events> eventsTimeLineTwo;
+    private Character characterOne;
+    private Character characterTwo;
     private String description;
 
     public Long getId() {
@@ -17,20 +19,36 @@ public class Relation {
         this.id = id;
     }
 
-    public List<Events> getEvents() {
-        return events;
+    public List<Events> getEventsTimelineOne() {
+        return eventsTimelineOne;
     }
 
-    public void setEvents(List<Events> events) {
-        this.events = events;
+    public void setEventsTimelineOne(List<Events> eventsTimelineOne) {
+        this.eventsTimelineOne = eventsTimelineOne;
     }
 
-    public List<Character> getCharacters() {
-        return characters;
+    public List<Events> getEventsTimeLineTwo() {
+        return eventsTimeLineTwo;
     }
 
-    public void setCharacters(List<Character> characters) {
-        this.characters = characters;
+    public void setEventsTimeLineTwo(List<Events> eventsTimeLineTwo) {
+        this.eventsTimeLineTwo = eventsTimeLineTwo;
+    }
+
+    public Character getCharacterOne() {
+        return characterOne;
+    }
+
+    public void setCharacterOne(Character characterOne) {
+        this.characterOne = characterOne;
+    }
+
+    public Character getCharacterTwo() {
+        return characterTwo;
+    }
+
+    public void setCharacterTwo(Character characterTwo) {
+        this.characterTwo = characterTwo;
     }
 
     public String getDescription() {

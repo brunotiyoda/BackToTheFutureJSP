@@ -10,16 +10,12 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8" %>
-
-
 <html>
 <head>
     <title>Back To The Future</title>
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
           integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
-
-    <link rel="stylesheet" href="css/characters.css">
 
     <script src="jquery/jquery-3.5.1.slim.min.js"></script>
 
@@ -32,11 +28,9 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js"
             integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s"
             crossorigin="anonymous"></script>
-
 </head>
 <body>
 <div class="container-fluid">
-
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand" href="${servletIndex}">BackToTheFuture</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
@@ -46,30 +40,32 @@
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
                 <a class="nav-link" href="${servletIndex}">Home</a>
-                <a class="nav-link active" href="${servletCharacters}">Personagens</a>
-                <a class="nav-link" href=${servletRelation}>Relações</a>
+                <a class="nav-link" href="${servletCharacters}">Personagens</a>
+                <a class="nav-link active" href=${servletRelation}>Relações</a>
             </div>
         </div>
     </nav>
 
-    <h1 class="display-3">Personagens</h1> <br/>
+    <h1 class="display-3">Cenas </h1> <br/>
 
-    <div>
-        <c:forEach var="character" items="${characters}">
-            <div class="characters rounded border border-dark">
-                <div class="rounded p-4">
-                    <img class="rounded"
-                         src="${character.photoBase64}" alt="${character.name}">
-                </div>
+    <form action="${servletRelation}" method="get">
+        <select id="characterOne" name="characterOne" class="custom-select custom-select-lg mb-3">
+            <option selected>Open this select menu</option>
+            <option value="1">Marty McFly</option>
+            <option value="3">Lorraine Baines McFly</option>
+            <option value="4">George McFly</option>
+        </select>
 
-                <div class="col px-md-5 descriptions">
-                    <h2>${character.name}</h2>
-                    <p class="text-justify">${character.description}</p>
-                </div>
-            </div>
-        </c:forEach>
-    </div>
+        <select id="characterTwo" name="characterTwo" class="custom-select custom-select-sm">
+            <option selected>Open this select menu</option>
+            <option value="2">'Doc' Emmett L. Brown</option>
+            <option value="3">Lorraine Baines McFly</option>
+            <option value="4">George McFly</option>
+            <option value="5">Biff Tannen</option>
+        </select>
 
+        <button type="submit">Pesquisar Relação</button>
+    </form>
 
 </div>
 </body>
