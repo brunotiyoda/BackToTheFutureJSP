@@ -39,15 +39,14 @@ public class RelationsDAO {
             relation.setEventsTimelineOne(eventsOnRelationOne);
             relation.setEventsTimeLineTwo(eventsOnRelationTwo);
 
-            List<Character> characters =
-                    characterEventDAO.getCharacters(relation.getCharacterOne().getId(), relation.getCharacterTwo().getId());
+            List<Character> characters = characterEventDAO.getCharacters(
+                    relation.getCharacterOne().getId(),
+                    relation.getCharacterTwo().getId()
+            );
 
             relation.setCharacterOne(characters.get(0));
             relation.setCharacterTwo(characters.get(1));
-
         }
-
-        connection.close();
 
         return relation;
     }

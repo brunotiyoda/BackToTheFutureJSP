@@ -1,6 +1,5 @@
 package com.back.to.the.future.services;
 
-import com.back.to.the.future.beans.Relation;
 import com.back.to.the.future.dao.RelationsDAO;
 
 import java.sql.SQLException;

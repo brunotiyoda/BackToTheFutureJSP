@@ -11,6 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class CharacterEventDAO {
+
     public List<String> characterIntoEvents(String eventId) throws SQLException, ClassNotFoundException {
         Connection connection = new ConnectionFactory().getConnection();
         List<String> characters = new ArrayList<>();

@@ -2,21 +2,21 @@ package com.back.to.the.future.services;
 
 import com.back.to.the.future.beans.Character;
 import com.back.to.the.future.beans.Photo;
-import com.back.to.the.future.configs.ConnectionFactory;
 import com.back.to.the.future.controllers.dtos.CharacterResponseDTO;
+import com.back.to.the.future.dao.CharacterDAO;
 
 import java.io.IOException;
-import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
 public class CharacterService {
 
+    private final CharacterDAO characterDAO = new CharacterDAO();
+
     public List<CharacterResponseDTO> listOfCharacters() throws IOException, SQLException, ClassNotFoundException {
-        ResultSet resultSet = sqlQuery();
+        ResultSet resultSet = characterDAO.getCharacters();
 
         List<Character> characters = buildCharacter(resultSet);
 
@@ -54,16 +54,5 @@ public class CharacterService {
         return characters;
     }
 
-    private ResultSet sqlQuery() throws SQLException, ClassNotFoundException {
-        Connection connection = new ConnectionFactory().getConnection();
-
-        Statement statement = connection.createStatement();
-        String sql = "SELECT * FROM " +
-                "TB_CHARACTERS " +
-                "INNER JOIN TB_PHOTOS ON TB_CHARACTERS.PHOTOS = TB_PHOTOS.PHOTOS_ID " +
-                "ORDER BY TB_CHARACTERS.CHARACTER_ID";
-        statement.executeQuery(sql);
-        return statement.getResultSet();
-    }
 
 }

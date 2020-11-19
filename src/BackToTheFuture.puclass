@@ -5,7 +5,7 @@ class Character {
     - name : String
     - description : String
     - curiosities : String
-    - photos : List<Photo>
+    - photo : Photo
     + getId()
     + setId(Long id)
     + getName()
@@ -14,8 +14,8 @@ class Character {
     + setDescription(String description)
     + getCuriosities()
     + setCuriosities(String curiosities)
-    + List<Photo> getPhotos()
-    + setPhotos(List<Photo> photos)
+    + Photo getPhoto()
+    + setPhoto(Photo photo)
 }
 
 class Events {
@@ -25,6 +25,7 @@ class Events {
     - description : String
     - characters : List<Character>
     - dateOfEvents : LocalDateTime
+    - timeline : int
     + getId()
     + setId(Long id)
     + getTitle()
@@ -34,6 +35,8 @@ class Events {
     + getDescription()
     + getDateOfEvents()
     + setDateOfEvents(LocalDateTime dateOfEvents)
+    + getTimeline()
+    + setTimeline(int timeline)
 }
 
 class Photo {
@@ -54,15 +57,21 @@ class Photo {
 
 class Relation {
     - id : Long
-    - scenes : List<Scenes>
-    - characters : List<Character>
+    - eventsTimelineOne : List<Events>
+    - eventsTimeLineTwo : List<Events>
+    - characterOne : Character
+    - characterTwo : Character
     - description : String
     + getId()
     + setId(Long id)
-    + getScenes()
-    + setScenes(List<Scenes> scenes)
-    + getCharacters()
-    + setCharacters(List<Character> characters)
+    + getEventsTimelineOne()
+    + setEventsTimelineOne(List<Events> eventsTimelineOne)
+    + getEventsTimeLineTwo()
+    + setEventsTimeLineTwo(List<Events> eventsTimeLineTwo)
+    + getCharacterOne()
+    + setCharacterOne(Character characterOne)
+    + getCharacterTwo()
+    + setCharacterTwo(Character characterTwo)
     + getDescription()
     + setDescription(String description)
 }

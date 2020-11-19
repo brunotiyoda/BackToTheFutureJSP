@@ -28,3 +28,14 @@
 .botao {
     background-color: #F1BF2C;
 }
+
+.body {
+    background-color: black;
+}
+
+.logo {
+    width: auto;
+    height: 80px;
+    opacity: 0.5;
+    filter: alpha(opacity=50);
+}

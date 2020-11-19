@@ -3,7 +3,6 @@ package com.back.to.the.future.beans;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 import java.util.Objects;
 
@@ -58,7 +57,7 @@ public class Events {
         this.timeline = timeline;
     }
 
-    private List<Character>  toCharacter(String character) {
+    private List<Character> toCharacter(String character) {
         List<Character> characters = new ArrayList<>();
         if (Objects.isNull(character)) {
             characters.add(new Character());

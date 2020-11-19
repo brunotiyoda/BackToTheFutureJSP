@@ -25,16 +25,7 @@ public class EventDAO {
                 ")\n" +
                 "  AND TIMELINE = 1\n" +
                 "ORDER BY EVENTS_ID\n";
-        statement.executeQuery(sql);
-        ResultSet rs = statement.getResultSet();
-        while (rs.next()) {
-            Events event = new Events();
-            event.setTitle(rs.getString("TITLE"));
-            event.setDescription(rs.getString("DESCRIPTION"));
-            eventsTimeLineOne.add(event);
-        }
-        connection.close();
-        return eventsTimeLineOne;
+        return buildEventOnRelation(eventsTimeLineOne, statement, sql);
     }
 
     public List<Events> eventsOnRelationTwo(Long relation) throws SQLException, ClassNotFoundException {
@@ -50,6 +41,12 @@ public class EventDAO {
                 ")\n" +
                 "  AND TIMELINE = 2\n" +
                 "ORDER BY EVENTS_ID\n";
+        return buildEventOnRelation(eventsTimeLineTwo, statement, sql);
+    }
+
+    private List<Events> buildEventOnRelation(List<Events> eventsTimeLineTwo,
+                                              Statement statement,
+                                              String sql) throws SQLException {
         statement.executeQuery(sql);
         ResultSet rs = statement.getResultSet();
         while (rs.next()) {
@@ -58,7 +55,6 @@ public class EventDAO {
             event.setDescription(rs.getString("DESCRIPTION"));
             eventsTimeLineTwo.add(event);
         }
-        connection.close();
         return eventsTimeLineTwo;
     }
 
@@ -69,18 +65,7 @@ public class EventDAO {
         String sql = "SELECT * FROM " +
                 "TB_EVENTS " +
                 "WHERE TIMELINE = 1 ORDER BY EVENTS_ID";
-        statement.executeQuery(sql);
-        ResultSet rs = statement.getResultSet();
-        while (rs.next()) {
-            Events event = new Events();
-            event.setId(rs.getLong("EVENTS_ID"));
-            event.setTitle(rs.getString("TITLE"));
-            event.setDescription(rs.getString("DESCRIPTION"));
-            event.setLink(rs.getString("LINK"));
-            eventsTimeLineOne.add(event);
-        }
-        connection.close();
-        return eventsTimeLineOne;
+        return buildEventOnTimeline(eventsTimeLineOne, statement, sql);
     }
 
     public List<Events> allEventsTimelineTwo() throws SQLException, ClassNotFoundException {
@@ -90,6 +75,12 @@ public class EventDAO {
         String sql = "SELECT * FROM " +
                 "TB_EVENTS " +
                 "WHERE TIMELINE = 2 ORDER BY EVENTS_ID";
+        return buildEventOnTimeline(eventsTimeLineOne, statement, sql);
+    }
+
+    private List<Events> buildEventOnTimeline(List<Events> eventsTimeLineOne,
+                                              Statement statement,
+                                              String sql) throws SQLException {
         statement.executeQuery(sql);
         ResultSet rs = statement.getResultSet();
         while (rs.next()) {
@@ -100,7 +91,6 @@ public class EventDAO {
             event.setLink(rs.getString("LINK"));
             eventsTimeLineOne.add(event);
         }
-        connection.close();
         return eventsTimeLineOne;
     }
 }

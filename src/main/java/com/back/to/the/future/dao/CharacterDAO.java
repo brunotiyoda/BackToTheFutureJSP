@@ -13,6 +13,18 @@ import java.util.List;
 
 public class CharacterDAO {
 
+    public ResultSet getCharacters() throws SQLException, ClassNotFoundException {
+        Connection connection = new ConnectionFactory().getConnection();
+
+        Statement statement = connection.createStatement();
+        String sql = "SELECT * FROM " +
+                "TB_CHARACTERS " +
+                "INNER JOIN TB_PHOTOS ON TB_CHARACTERS.PHOTOS = TB_PHOTOS.PHOTOS_ID " +
+                "ORDER BY TB_CHARACTERS.CHARACTER_ID";
+        statement.executeQuery(sql);
+        return statement.getResultSet();
+    }
+
     public List<Character> getCharacters(Long characterOne, Long characterTwo) throws SQLException, ClassNotFoundException {
         Connection connection = new ConnectionFactory().getConnection();
         Statement statement = connection.createStatement();
@@ -32,7 +44,6 @@ public class CharacterDAO {
             );
             characters.add(character);
         }
-        connection.close();
         return characters;
     }
 }
