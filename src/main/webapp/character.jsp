@@ -34,23 +34,25 @@
             crossorigin="anonymous"></script>
 
 </head>
-<body>
-<div class="container-fluid">
+<body class="body">
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="${servletIndex}">BackToTheFuture</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
-                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-            <div class="navbar-nav">
-                <a class="nav-link" href="${servletIndex}">Home</a>
-                <a class="nav-link active" href="${servletCharacters}">Personagens</a>
-                <a class="nav-link" href=${servletRelation}>Relações</a>
-            </div>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#"><img src="img/logo.png" alt="logo" class="logo"></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+            aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+            <a class="nav-link " href="${servletIndex}">Home</a>
+            <a class="nav-link active" href="${servletCharacters}">Personagens</a>
+            <a class="nav-link" href=${servletRelation}>Relações</a>
+            <a class="nav-link" href=${servletRelation}>Chatbot</a>
+            <a class="nav-link" href=${servletRelation}>Diagrama de Classe</a>
         </div>
-    </nav>
+    </div>
+</nav>
+<div class="container-fluid">
 
     <h1 class="display-3">Personagens</h1> <br/>
 
