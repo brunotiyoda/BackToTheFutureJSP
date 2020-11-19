@@ -21,18 +21,6 @@
 
     <link rel="stylesheet" href="css/backtothefuture.css">
 
-    <script src="jquery/jquery-3.5.1.slim.min.js"></script>
-
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-            integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-            crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
-            integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
-            crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js"
-            integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s"
-            crossorigin="anonymous"></script>
-
 </head>
 <body class="body">
 
@@ -44,17 +32,18 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav">
-            <a class="nav-link " href="${servletIndex}">Home</a>
-            <a class="nav-link active" href="${servletCharacters}">Personagens</a>
-            <a class="nav-link" href=${servletRelation}>Relações</a>
-            <a class="nav-link" href=${servletRelation}>Chatbot</a>
-            <a class="nav-link" href=${servletRelation}>Diagrama de Classe</a>
+            <a class="nav-link cool-link" href="${servletIndex}">Home</a>
+            <a class="nav-link cool-link active" href="${servletCharacters}">Personagens</a>
+            <a class="nav-link cool-link" href=${servletRelation}>Relações</a>
+            <a class="nav-link cool-link" href=chatbot.jsp>Machine Learn</a>
+            <a class="nav-link cool-link" href=diagrama-de-classe.jsp>Diagrama de Classe</a>
         </div>
     </div>
 </nav>
+
 <div class="container-fluid">
 
-    <h1 class="display-3">Personagens</h1> <br/>
+    <h1 class="display-3 subtitle">Personagens</h1> <br/>
 
     <div>
         <c:forEach var="character" items="${characters}">
@@ -74,5 +63,17 @@
 
 
 </div>
+
+<script src="jquery/jquery-3.5.1.slim.min.js"></script>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js"
+        integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s"
+        crossorigin="anonymous"></script>
 </body>
 </html>
