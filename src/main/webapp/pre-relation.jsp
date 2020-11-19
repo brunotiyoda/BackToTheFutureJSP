@@ -28,43 +28,52 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js"
             integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s"
             crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="css/backtothefuture.css">
 </head>
 <body>
-<div class="container-fluid">
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="${servletIndex}">BackToTheFuture</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
-                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-            <div class="navbar-nav">
-                <a class="nav-link" href="${servletIndex}">Home</a>
-                <a class="nav-link" href="${servletCharacters}">Personagens</a>
-                <a class="nav-link active" href=${servletRelation}>Relações</a>
-            </div>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="${servletIndex}">BackToTheFuture</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+            aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+            <a class="nav-link" href="${servletIndex}">Home</a>
+            <a class="nav-link" href="${servletCharacters}">Personagens</a>
+            <a class="nav-link active" href=${servletRelation}>Relações</a>
         </div>
-    </nav>
+    </div>
+</nav>
 
-    <h1 class="display-3">Cenas </h1> <br/>
+<div class="container-fluid">
+
+    <h1 class="display-3">Pesquisar Relação entre personagens</h1> <br/>
 
     <form action="${servletRelation}" method="get">
-        <select id="characterOne" name="characterOne" class="custom-select custom-select-lg mb-3">
-            <option selected>Open this select menu</option>
-            <option value="1">Marty McFly</option>
-            <option value="3">Lorraine Baines McFly</option>
-            <option value="4">George McFly</option>
-        </select>
+        <div class="row">
+            <div class="col-sm">
+                <select id="characterOne" name="characterOne" class="custom-select custom-select-lg">
+                    <option selected>Selecione um personagem</option>
+                    <option value="1">Marty McFly</option>
+                    <option value="3">Lorraine Baines McFly</option>
+                    <option value="4">George McFly</option>
+                </select>
+            </div>
 
-        <select id="characterTwo" name="characterTwo" class="custom-select custom-select-sm">
-            <option selected>Open this select menu</option>
-            <option value="2">'Doc' Emmett L. Brown</option>
-            <option value="3">Lorraine Baines McFly</option>
-            <option value="4">George McFly</option>
-            <option value="5">Biff Tannen</option>
-        </select>
+            <div class="col-sm">
+                <select id="characterTwo" name="characterTwo" class="custom-select custom-select-lg">
+                    <option selected>Selecione um personagem</option>
+                    <option value="2">'Doc' Emmett L. Brown</option>
+                    <option value="3">Lorraine Baines McFly</option>
+                    <option value="4">George McFly</option>
+                    <option value="5">Biff Tannen</option>
+                </select>
+            </div>
+        </div>
 
-        <button type="submit">Pesquisar Relação</button>
+        <button type="submit" class="btn btn-lg botao">Pesquisar Relação</button>
     </form>
 
 </div>

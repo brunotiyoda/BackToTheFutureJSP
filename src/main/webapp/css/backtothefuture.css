@@ -15,3 +15,16 @@
     height: auto;
     position: static;
 }
+
+.relation-header {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    border-radius: 1px;
+    background: #c6c6c6;
+}
+
+.botao {
+    background-color: #F1BF2C;
+}

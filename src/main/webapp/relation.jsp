@@ -28,37 +28,40 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js"
             integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s"
             crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/backtothefuture.css">
 </head>
 <body>
-<div class="container-fluid">
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="${servletIndex}">BackToTheFuture</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
-                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-            <div class="navbar-nav">
-                <a class="nav-link" href="${servletIndex}">Home</a>
-                <a class="nav-link" href="${servletCharacters}">Personagens</a>
-                <a class="nav-link active" href=${servletRelation}>Relações</a>
-            </div>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="${servletIndex}">BackToTheFuture</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+            aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+            <a class="nav-link" href="${servletIndex}">Home</a>
+            <a class="nav-link" href="${servletCharacters}">Personagens</a>
+            <a class="nav-link active" href=${servletRelation}>Relações</a>
         </div>
-    </nav>
+    </div>
+</nav>
 
-    <h1 class="display-3">Cenas </h1> <br/>
+<div class="container-fluid">
 
-    <div>
+    <h1 class="display-3">Relação</h1> <br/>
+
+    <div class="relation-header">
         <img class="rounded"
              src="${relation.characterOne.photo.path}" alt="${relation.characterOne.name}">
 
         <h2>${relation.characterOne.name}</h2>
-        -
         <h2>${relation.characterTwo.name}</h2>
 
         <img class="rounded"
              src="${relation.characterTwo.photo.path}" alt="${relation.characterOne.name}">
     </div>
+
+    <h3>Eventos em Comum</h3>
 
     <div class="row">
         <div class="col">
@@ -86,7 +89,6 @@
         </div>
 
         <div class="col">
-            <h3>${relation.description}</h3>
             <h3 class="display-3">Linha do Tempo 2</h3>
             <c:forEach var="timelineTwo" items="${relation.eventsTimeLineTwo}">
                 <div class="col">
