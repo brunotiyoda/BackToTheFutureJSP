@@ -31,7 +31,6 @@ public class CharacterService {
                     characterResponseDTO.setId(character.getId());
                     characterResponseDTO.setName(character.getName());
                     characterResponseDTO.setDescription(character.getDescription());
-                    characterResponseDTO.setCuriosities(character.getCuriosities());
                     characterResponseDTO.setPhotoBase64(character.getPhoto().getPath());
                     characterResponseDTOS.add(characterResponseDTO);
                 }

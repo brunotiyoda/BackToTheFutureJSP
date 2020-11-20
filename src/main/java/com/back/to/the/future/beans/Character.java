@@ -5,7 +5,6 @@ public class Character {
     private Long id;
     private String name;
     private String description;
-    private String curiosities;
     private Photo photo;
 
     public Character() {
@@ -37,14 +36,6 @@ public class Character {
 
     public void setDescription(String description) {
         this.description = description;
-    }
-
-    public String getCuriosities() {
-        return curiosities;
-    }
-
-    public void setCuriosities(String curiosities) {
-        this.curiosities = curiosities;
     }
 
     public Photo getPhoto() {

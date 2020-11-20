@@ -52,6 +52,10 @@
 <h1 class="display-3 subtitle">Machine Learning – DISRUPT21</h1> <br/>
 <div class="container">
 
+    <a class="btn botao" href="https://colab.research.google.com/drive/1ZyV8irqgd5bG4Etp5Wx1eJ3EYvgzbWlc?usp=sharing">
+        Exemplo de Regressão Linear
+    </a>
+
     <p class="text">
         Na realidade do filme De Volta Para o Futuro, os personagens viajam no tempo com o auxílio da máquina criada
         pelo Dr. Emmet Brown, um carro DeLorean modificado para conseguir realizar saltos temporais, demandando uma

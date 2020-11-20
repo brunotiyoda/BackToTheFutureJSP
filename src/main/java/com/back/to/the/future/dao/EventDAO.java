@@ -25,7 +25,6 @@ public class EventDAO {
                 ")\n" +
                 "  AND NR_TIMELINE = 1\n" +
                 "ORDER BY ID_EVENT";
-        connection.close();
         return buildEventOnRelation(eventsTimeLineOne, statement, sql);
     }
 
@@ -42,7 +41,6 @@ public class EventDAO {
                 ")\n" +
                 "  AND NR_TIMELINE = 2\n" +
                 "ORDER BY ID_EVENT";
-        connection.close();
         return buildEventOnRelation(eventsTimeLineTwo, statement, sql);
     }
 

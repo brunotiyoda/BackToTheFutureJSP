@@ -4,7 +4,6 @@ class Character {
     - id : Long
     - name : String
     - description : String
-    - curiosities : String
     - photo : Photo
     + getId()
     + setId(Long id)
@@ -12,8 +11,6 @@ class Character {
     + setName(String name)
     + getDescription()
     + setDescription(String description)
-    + getCuriosities()
-    + setCuriosities(String curiosities)
     + Photo getPhoto()
     + setPhoto(Photo photo)
 }
@@ -42,17 +39,10 @@ class Events {
 class Photo {
     - id : Long
     - path : String
-    - year : String
-    - descriptionOld : String
-    - descriptionActual : String
     + getId()
     + setId(Long id)
-    + getYear()
-    + setYear(String year)
-    + getDescriptionOld()
-    + setDescriptionOld(String descriptionOld)
-    + getDescriptionActual()
-    + setDescriptionActual(String descriptionActual) 
+    + getPath()
+    + setPath(String path)
 }
 
 class Relation {
@@ -76,21 +66,13 @@ class Relation {
     + setDescription(String description)
 }
 
-class CharacterRelation {
-    - id : Long
-    - character : Character
-    - relation : Relation
-    + getId()
-    + setId(Long id)
-    + getCharacter()
-    + setCharacter(Character character)
-    + getRelation()
-    + setRelation(Relation relation)
-}
-
-
-Character "2" -- "*" Relation
-Character "1" -- "*" Photo
+Character "2" -- "1" Relation
+Character "1" -- "1" Photo
 Events "*" -- "1" Relation
+
+Events o-- Character
+Relation o-- Events
+Relation o-- Character
+Character *-- Photo
 
 @enduml
