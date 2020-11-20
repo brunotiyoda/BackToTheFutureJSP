@@ -1,23 +1,24 @@
 # Back To The Future
-
-## Descrição do Projeto
 Entender a cronologia e a conexão entre os personagens do filme não é uma tarefa fácil. Sua
 equipe tem como missão melhorar a experiência do usuário com o filme, ajudando-o a entender as
 relações entre personagens, fatos, tempo e tecnologias.
 
-Tecnologias
+## Tecnologias
 - Java 8
 - JSP
 - Servlet
 - Maven
 
-Pré-requisitos para build
+## Pré-requisitos para build
 * Java 8
 * Tomcat 9.0.39
 * Ter instalado Apache Maven 3.6.3
+* Criar a pasta lib em WEB-INF
 * JAR ojdbc6 no path WEB-INF > lib > ojdbc6.jar
+* Após o jar, clique com o botão direito do mouse na pasta lib > Add as Library
 
-Build do projeto
+
+## Build do projeto
 * IDE de preferência: IntelliJ IDEA
 * Importe o projeto
 * Importe o Tomcat no IntelliJ
