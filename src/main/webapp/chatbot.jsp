@@ -18,16 +18,6 @@
 
     <script src="jquery/jquery-3.5.1.slim.min.js"></script>
 
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-            integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-            crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
-            integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
-            crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js"
-            integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s"
-            crossorigin="anonymous"></script>
-
     <link rel="stylesheet" href="css/backtothefuture.css">
 </head>
 <body class="body">
@@ -103,5 +93,62 @@
 
 </div>
 
+<h3 class="display-5 subtitle">Tecnologias consideradas “futurísticas” no filme</h3> <br/>
+
+<div class="container">
+
+    <img src="img/tecn/lixeira.jpeg" alt="lixeira autonoma">
+    <p class="text">
+        LIXEIRA AUTÔNOMA - Quando o doutor Brown tenta jogar fora o Almanaque dos Esportes com resultados dos jogos de
+        1950 a 2000, e que seria usado por Marty para lucrar com apostas, ele se depara com uma lixeira que circula pela
+        rua e abre sozinha para depositar o lixo. Em 2012, um cara inventou um lixo com rodas que, com ajuda de um
+        Kinect, detecta movimentos e vai para o local onde foi arremessado o objeto. Só falta produzir algo similar em
+        larga escala
+    </p>
+
+    <img src="img/tecn/biometria%20portas.jpeg" alt="biometria portas">
+    <img src="img/tecn/biometria%20pag.jpeg" alt="biometria pagmento">
+    <p class="text">
+        BIOMETRIA PARA ABRIR PORTAS - No filme, policiais levam Jennifer para a casa dos McFly e usam seu polegar para
+        abrir a porta da frente. Até já temos algo igual, mas as fechaduras biométricas são caras, pouco acessíveis e
+        ficam ainda restritas às feiras de tecnologia e de utilidades domésticas. Mas as chances de popularizarem daqui
+        a uns anos são boas
+    </p>
+
+    <p class="text">
+        BIOMETRIA PARA COMPRAS - Os personagens do futuro também usam o polegar para realizar pagamentos; Biff faz isso
+        para pagar uma corrida de táxi (ou será um Uber?). O pagamento por celular já toma forma via Apple Pay e Android
+        Pay, e possivelmente usarão o recurso de reconhecimento de impressão digital dos smartphones mais avançados
+    </p>
+    <p class="text">
+        Sensores biométricos. Vemos essa aplicação em massa em celulares hoje em dia, mas os mais aprimorados são
+        aplicados também no acesso a contas de banco, por exemplo. Para que isso seja possível existe um machine
+        learning por trás como máquinas de vetores de suporte e redes neurais convolucionais.
+    </p>
+
+    <img src="img/tecn/lista.jpeg" alt="Lista telefonica">
+    <p class="text">
+        GPS
+        Logo após Marty saltar no tempo de volta à 1955 ele procura alguma forma de se comunicar com o Dr Emmet Brown,
+        ao entrar no café Lou Caruthers ele pega uma lista telefônica onde lá encontra o número do telefone e o endereço
+        do Doc. Após não ter êxito na ligação, Marty pega a página que contém o endereço e com informações de demais
+        pessoas ele segue seu caminho em busca de Emmet Brown.
+        Hoje em dia temos a tecnologia necessária para o fácil acesso de um aparelho com GPS que com os sinais de seus
+        satélites identificam sua localização e junto com o mapa da região identifica as melhores rotas para chegar no
+        destino final.
+
+    </p>
+
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js"
+        integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s"
+        crossorigin="anonymous"></script>
 </body>
 </html>
