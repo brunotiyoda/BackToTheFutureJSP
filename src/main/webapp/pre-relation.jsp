@@ -34,7 +34,7 @@
             <a class="nav-link cool-link active" href=${servletRelation}>Relações</a>
             <a class="nav-link" href="chatbot.jsp">Machine Learn</a>
             <a class="nav-link" href="chatbot.jsp">Machine Learn</a>
-            <a class="nav-link" href="diagrama-de-classe.jsp">Diagrama de Classe</a>
+            <a class="nav-link" href="https://drive.google.com/file/d/10-MP7dI7gJ4-_YDFdDQmJ_zWvu_GUdhE/view?usp=sharing">Diagrama de Classe</a>
         </div>
     </div>
 </nav>
