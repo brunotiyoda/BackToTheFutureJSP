@@ -46,15 +46,25 @@
         <div class="navbar-nav">
             <a class="nav-link" href="${servletIndex}">Home</a>
             <a class="nav-link" href="${servletCharacters}">Personagens</a>
-            <a class="nav-link" href=${servletRelation}>Relações</a>
-            <a class="nav-link" href=chatbot.jsp>Machine Learn</a>
-            <a class="nav-link active" href=diagrama-de-classe.jsp>Diagrama de Classe</a>
+            <a class="nav-link" href="${servletRelation}">Relações</a>
+            <a class="nav-link" href="chatbot.jsp">Machine Learn</a>
+            <a class="nav-link active" href="diagrama-de-classe.jsp">Diagrama de Classe</a>
         </div>
     </div>
 </nav>
 
 <h1 class="display-3 subtitle">Diagrama de Classe – DISRUPT21</h1> <br/>
 <div class="container">
+
+    <a class="btn botao"
+       href="https://documentcloud.adobe.com/link/review?uri=urn:aaid:scds:US:d0b4e10c-b2b6-4ae6-8bc8-8e0be1b915a9">
+        Diagrama de classe
+    </a>
+
+    <p class="text">
+        Acesso ao diagrama de Classes no padrão UML,
+        publicados em PDF e disponibilizados em um diretório na nuvem.
+    </p>
 
     <img class="rounded"
          src="img/BackToTheFuture.jpg" alt="Diagrama de classe">

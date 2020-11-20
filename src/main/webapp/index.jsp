@@ -35,8 +35,8 @@
             <a class="nav-link cool-link active" href="${servletIndex}">Home</a>
             <a class="nav-link cool-link" href="${servletCharacters}">Personagens</a>
             <a class="nav-link cool-link" href=${servletRelation}>Relações</a>
-            <a class="nav-link cool-link" href=chatbot.jsp>Machine Learn</a>
-            <a class="nav-link cool-link" href=diagrama-de-classe.jsp>Diagrama de Classe</a>
+            <a class="nav-link" href="chatbot.jsp">Machine Learn</a>
+            <a class="nav-link" href="diagrama-de-classe.jsp">Diagrama de Classe</a>
         </div>
     </div>
 </nav>
