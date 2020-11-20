@@ -42,13 +42,12 @@ public class CharacterService {
     private List<Character> buildCharacter(ResultSet resultSet) throws SQLException {
         List<Character> characters = new ArrayList<>();
         while (resultSet.next()) {
-            Character character = new Character(
-                    resultSet.getLong("CHARACTER_ID"),
-                    resultSet.getString("NAME"),
-                    resultSet.getString("DESCRIPTION"),
-                    resultSet.getString("CURIOSITIES"),
-                    new Photo(resultSet.getString("IMGBASE64"))
-            );
+            Character character = new Character();
+            character.setId(resultSet.getLong("ID_CHARACTER"));
+            character.setName(resultSet.getString("NM_NAME"));
+            character.setDescription(resultSet.getString("DS_DESCRIPTION"));
+            character.setPhoto(new Photo(resultSet.getString("IMGBASE64")));
+
             characters.add(character);
         }
         return characters;

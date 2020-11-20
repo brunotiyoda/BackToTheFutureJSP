@@ -7,6 +7,7 @@ public class Relation {
     private Long id;
     private List<Events> eventsTimelineOne;
     private List<Events> eventsTimeLineTwo;
+    private List<Character> characters;
     private Character characterOne;
     private Character characterTwo;
     private String description;
@@ -33,6 +34,14 @@ public class Relation {
 
     public void setEventsTimeLineTwo(List<Events> eventsTimeLineTwo) {
         this.eventsTimeLineTwo = eventsTimeLineTwo;
+    }
+
+    public List<Character> getCharacters() {
+        return characters;
+    }
+
+    public void setCharacters(List<Character> characters) {
+        this.characters = characters;
     }
 
     public Character getCharacterOne() {

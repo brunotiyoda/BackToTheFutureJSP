@@ -10,7 +10,6 @@ public class Events {
 
     private Long id;
     private String title;
-    private String link;
     private String description;
     private List<Character> characters;
     private LocalDateTime dateOfEvents;
@@ -20,37 +19,31 @@ public class Events {
     }
 
     public Events(String title,
-                  String link,
                   String description,
                   List<Character> characters,
                   LocalDateTime dateOfEvents) {
         this.title = title;
-        this.link = link;
         this.description = description;
         this.characters = characters;
         this.dateOfEvents = dateOfEvents;
     }
 
     public Events(String title,
-                  String link,
                   String description,
                   String characters,
                   String dateOfEvents) {
         this.title = title;
-        this.link = link;
         this.description = description;
         this.characters = toCharacter(characters);
         this.dateOfEvents = toLocalDateTime(dateOfEvents);
     }
 
     public Events(String title,
-                  String link,
                   String description,
                   String characters,
                   String dateOfEvents,
                   int timeline) {
         this.title = title;
-        this.link = link;
         this.description = description;
         this.characters = toCharacter(characters);
         this.dateOfEvents = toLocalDateTime(dateOfEvents);
@@ -86,14 +79,6 @@ public class Events {
 
     public void setTitle(String title) {
         this.title = title;
-    }
-
-    public String getLink() {
-        return link;
-    }
-
-    public void setLink(String link) {
-        this.link = link;
     }
 
     public String getDescription() {

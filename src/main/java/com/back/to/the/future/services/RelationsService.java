@@ -8,7 +8,7 @@ public class RelationsService {
 
     private final RelationsDAO relationsDAO = new RelationsDAO();
 
-    public Object relations(int characterOne, int characterTwo) throws SQLException, ClassNotFoundException {
-        return relationsDAO.relation(characterOne, characterTwo);
+    public Object relations(int idRelation) throws SQLException, ClassNotFoundException {
+        return relationsDAO.relation(idRelation);
     }
 }

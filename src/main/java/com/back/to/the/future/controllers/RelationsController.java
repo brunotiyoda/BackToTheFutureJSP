@@ -23,10 +23,29 @@ public class RelationsController extends HttpServlet {
             String characterOne = req.getParameter("characterOne");
             String characterTwo = req.getParameter("characterTwo");
 
+            int idRelacao = 0;
+
             if (Objects.nonNull(characterOne) && Objects.nonNull(characterTwo)) {
-                req.setAttribute("relation",
-                        relationsService.relations(new Integer(characterOne), new Integer(characterTwo))
-                );
+                if ("1".equals(characterOne) && "2".equals(characterTwo)) {
+                    idRelacao = 1;
+                }
+                if ("1".equals(characterOne) && "3".equals(characterTwo)) {
+                    idRelacao = 2;
+                }
+                if ("1".equals(characterOne) && "4".equals(characterTwo)) {
+                    idRelacao = 3;
+                }
+                if ("3".equals(characterOne) && "4".equals(characterTwo)) {
+                    idRelacao = 4;
+                }
+                if ("3".equals(characterOne) && "5".equals(characterTwo)) {
+                    idRelacao = 5;
+                }
+                if ("4".equals(characterOne) && "5".equals(characterTwo)) {
+                    idRelacao = 6;
+                }
+
+                req.setAttribute("relation", relationsService.relations(idRelacao));
                 RequestDispatcher requestDispatcher = req.getRequestDispatcher("relation.jsp");
                 requestDispatcher.forward(req, resp);
                 return;

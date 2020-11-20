@@ -17,10 +17,10 @@ public class CharacterDAO {
         Connection connection = new ConnectionFactory().getConnection();
 
         Statement statement = connection.createStatement();
-        String sql = "SELECT * FROM " +
-                "TB_CHARACTERS " +
-                "INNER JOIN TB_PHOTOS ON TB_CHARACTERS.PHOTOS = TB_PHOTOS.PHOTOS_ID " +
-                "ORDER BY TB_CHARACTERS.CHARACTER_ID";
+        String sql = "SELECT *\n" +
+                "FROM T_DISRUPT_CHARACTERS\n" +
+                "         INNER JOIN T_DISRUPT_PHOTOS ON T_DISRUPT_CHARACTERS.ID_PHOTO = T_DISRUPT_PHOTOS.ID_PHOTO\n" +
+                "ORDER BY T_DISRUPT_CHARACTERS.ID_CHARACTER";
         statement.executeQuery(sql);
         return statement.getResultSet();
     }
@@ -38,12 +38,38 @@ public class CharacterDAO {
         ResultSet resultSet = statement.getResultSet();
         List<Character> characters = new ArrayList<>();
         while (resultSet.next()) {
-            Character character = new Character(
-                    resultSet.getString("NAME"),
-                    new Photo(resultSet.getString("IMGBASE64"))
-            );
+            Character character = new Character();
+            character.setName(resultSet.getString("NM_NAME"));
+            character.setPhoto(new Photo(resultSet.getString("IMGBASE64")));
             characters.add(character);
         }
+        connection.close();
+        return characters;
+    }
+
+
+    public List<Character> getCharacters(Long idRelacao) throws SQLException, ClassNotFoundException {
+        Connection connection = new ConnectionFactory().getConnection();
+        Statement statement = connection.createStatement();
+        String sql = "SELECT *\n" +
+                "FROM T_DISRUPT_CHARACTERS\n" +
+                "INNER JOIN T_DISRUPT_PHOTOS TDP\n" +
+                "                    ON T_DISRUPT_CHARACTERS.ID_PHOTO = TDP.ID_PHOTO\n" +
+                "WHERE ID_CHARACTER IN (\n" +
+                "    SELECT ID_CHARACTER\n" +
+                "    FROM T_DISRUPT_CHARAC_ON_RELATION\n" +
+                "    WHERE ID_RELATION =" + idRelacao + ")";
+
+        statement.executeQuery(sql);
+        ResultSet resultSet = statement.getResultSet();
+        List<Character> characters = new ArrayList<>();
+        while (resultSet.next()) {
+            Character character = new Character();
+            character.setName(resultSet.getString("NM_NAME"));
+            character.setPhoto(new Photo(resultSet.getString("IMGBASE64")));
+            characters.add(character);
+        }
+        connection.close();
         return characters;
     }
 }
